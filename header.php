@@ -14,22 +14,44 @@
 
 	</head>
 
-	<body <?php body_class('w-full overflow-x-hidden min-h-full flex flex-col font-body'); ?>>
+	<body <?php body_class('w-full overflow-x-hidden h-full flex flex-col font-body'); ?>>
 
 		<?php wp_body_open(); ?>
 
-		<header role="banner" class="w-full flex justify-between items-center bg-blue px-wrap py-6 text-white">
+		<header role="banner" class="w-full flex justify-between items-center bg-blue px-wrap py-4 text-white">
 
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php if ( is_home() || is_front_page() ) { ?>
 
-				<h1><?php bloginfo('name'); ?></h1>
+			<?php
 
-			<?php } else { ?>
+			if ( has_custom_logo() ) {
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+			}
 
-				<?php bloginfo('name'); ?>
+			if ( is_home() || is_front_page() ) {
 
-			<?php } ?>
+				echo '<h1>';
+
+					if ( has_custom_logo() ) {
+						echo '<img src="' . $image[0] . '" alt="' . get_bloginfo('name') . '" style="max-width: 150px" />';
+					} else {
+						echo bloginfo('name');
+					}
+
+				echo '</h1>';
+
+			} else {
+
+				if ( has_custom_logo() ) {
+					echo '<img src="' . $image[0] . '" alt="' . get_bloginfo('name') . '" style="max-width: 150px" />';
+				} else {
+					echo bloginfo('name');
+				}
+
+			}
+
+			?>
 
 			</a>
 
@@ -41,7 +63,7 @@
 
 				<nav role="navigation" aria-label="main navigation" class="uppercase hidden md:block">
 
-					<ul class="flex flex-wrap items-center font-medium">
+					<ul class="flex flex-wrap items-center font-medium justify-end text-sm">
 				
 						<?php
 						if ( has_nav_menu( 'primary' ) ) {
@@ -51,6 +73,8 @@
 								'items_wrap' 		=> '%3$s',
 								'before'			=>'<span class="md:ml-4">',
 								'after'				=>'</span>',
+								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
+								'link_after'		=> '</span>',
 								'fallback_cb'    	=> false,
 							) );
 						}
@@ -79,4 +103,4 @@
 
 		</header>
 		
-		<main role="main" class="w-full flex-1 px-wrap bg-blue">
+		<main role="main" class="w-full flex-1 px-wrap">
