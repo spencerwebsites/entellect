@@ -2,7 +2,7 @@
 
     <?php get_template_part( 'partials/entry-header' ); ?>
 
-    <div>
+    <div class="entry-content">
         <?php
         if ( is_search() || ! is_singular() ) {
             the_excerpt();
