@@ -4,38 +4,9 @@
 
 			if ( !is_home() && !is_front_page() ) :
 
-				$args = array( 
-					'post_type' => 'service',
-				);
+				get_template_part( 'partials/service-bar' );
 
-				$the_query = new WP_Query( $args );
-
-				if ( $the_query->have_posts() ) :
-
-				?>
-
-					<section class="bg-white">
-
-						<div class="mx-wrap px-10 pt-10 transform -translate-y-16 flex flex-wrap justify-evenly items-top bg-white gap-10">
-					
-						<?php while ( $the_query->have_posts() ) : $the_query->the_post() ?>
-
-							<a href="<?php the_permalink() ?>" class="text-center flex-1">
-								<div class="mb-3 text-<?php the_field( 'color' ); ?> bg-<?php the_field( 'color' ); ?>-lt h-20 w-20 mx-auto flex items-center justify-center rounded-full hover:bg-transparent duration-300">
-									<i data-feather="<?php the_field( 'icon' ); ?>" class="mx-auto"></i>
-								</div>
-								<?php the_title('<h3 class="text-lg">', '</h3>'); ?>
-							</a>
-
-						<?php endwhile; ?>
-
-						</div>
-
-					</section>
-
-				<?php endif; wp_reset_query(); ?>
-					
-			<?php endif; ?>
+			endif; ?>
 
 			<?php if ( has_nav_menu( 'cta' ) ) { ?>
 			<nav role="navigation" aria-label="call to action navigation" class="bg-purple px-wrap py-10 text-white">
@@ -45,7 +16,7 @@
 					'theme_location'	=> 'cta',
 					'container' 		=> false,
 					'menu_class'		=> 'flex flex-wrap justify-center items-center',
-					'link_before'		=> '<span class="block px-6 py-3 bg-white text-purple uppercase text-xl font-medium border-2 border-white border-solid duration-300 hover:bg-purple hover:text-white focus:bg-purple focus:text-white">',
+					'link_before'		=> '<span class="block px-6 py-3 bg-white text-purple uppercase text-lg font-medium border-2 border-white border-solid duration-300 hover:bg-purple hover:text-white focus:bg-purple focus:text-white">',
 					'link_after'		=> '</span>',
 					'fallback_cb'    	=> false,
 				) );
@@ -104,9 +75,9 @@
 						_x( 'Y', 'copyright date format' )
 					);
 					?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="underline"><?php bloginfo( 'name' ); ?></a>.
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="underline hover:no-underline focus:no-underline"><?php bloginfo( 'name' ); ?></a>.
 					<?php _e( 'All rights reserved. | Developed by' ); ?>
-					<a href="<?php echo esc_url( __( 'https://spencercreative.co/' ) ); ?>" class="underline">
+					<a href="<?php echo esc_url( __( 'https://spencercreative.co/' ) ); ?>" class="underline hover:no-underline focus:no-underline">
 						<?php _e( 'Spencer Creative Co.' ); ?>
 					</a>
 				</p>
