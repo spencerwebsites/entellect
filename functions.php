@@ -1,5 +1,31 @@
 <?php
 
+add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'custom-logo' ); 
+add_theme_support( 'editor-color-palette', array(
+    array(
+        'name' => __( 'Entellect Blue', 'entellect' ),
+        'slug' => 'entellect-blue',
+        'color' => '#182B3E',
+    ),
+    array(
+        'name' => __( 'Entellect Purple', 'entellect' ),
+        'slug' => 'entellect-purple',
+        'color' => '#693C8D',
+    ),
+    array(
+        'name' => __( 'Entellect Green', 'entellect' ),
+        'slug' => 'entellect-green',
+        'color' => '#81A34B',
+    ),
+    array(
+        'name' => __( 'Entellect Yellow', 'entellect' ),
+        'slug' => 'entellect-yellow',
+        'color' => '#C6A264',
+    ),
+) );
+add_theme_support( 'disable-custom-colors' );
+
 require_once('lib/functions.php');
 
 function sccwps_enqueue_style() {      
