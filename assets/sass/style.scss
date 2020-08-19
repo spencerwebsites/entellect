@@ -88,8 +88,15 @@ body:not(.home) main > article:last-child > *:last-child > *:last-child {
 .entry-content {
     @apply text-lg;
 
-    * {
+    *:not(.wp-block-group):not(.wp-block-columns) {
+        max-width: 1100px;
+        @apply mx-auto;
         @apply mb-6;
+    }
+
+    .wp-block-group__inner-container {
+        max-width: 1100px;
+        @apply mx-auto;
     }
 
     > *:last-child {
