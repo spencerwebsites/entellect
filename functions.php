@@ -57,6 +57,12 @@ function sccwps_enqueue_script(){
 add_action( 'wp_enqueue_scripts', 'sccwps_enqueue_style' );
 add_action( 'wp_enqueue_scripts', 'sccwps_enqueue_script' );
 
+function load_custom_wp_admin_style(){
+    wp_register_style( 'entellect-admin-styles', get_template_directory_uri() . '/assets/css/admin.css', false, '1.0.0' );
+    wp_enqueue_style( 'entellect-admin-styles' );
+}
+add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style');
+
 
 function sccwps_menus() {
 
