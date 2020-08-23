@@ -1,7 +1,8 @@
 <?php
 
 add_theme_support( 'post-thumbnails' ); 
-add_theme_support( 'custom-logo' ); 
+add_theme_support( 'custom-logo' );
+add_post_type_support( 'page', 'excerpt' );
 add_theme_support( 'editor-color-palette', array(
     array(
         'name' => __( 'Entellect Blue', 'entellect' ),
@@ -22,6 +23,11 @@ add_theme_support( 'editor-color-palette', array(
         'name' => __( 'Entellect Yellow', 'entellect' ),
         'slug' => 'entellect-yellow',
         'color' => '#C6A264',
+    ),
+    array(
+        'name' => __( 'Entellect Gray', 'entellect' ),
+        'slug' => 'entellect-gray',
+        'color' => '#C4C4C4',
     ),
 ) );
 add_theme_support( 'disable-custom-colors' );

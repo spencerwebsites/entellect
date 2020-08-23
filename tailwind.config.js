@@ -49,7 +49,8 @@ module.exports = {
 				'purple-lt': '#DECEEE',
 				'blue-lt': '#D2DFF2',
 				'green-lt': '#D2E4A3',
-				'yellow-lt': '#F7E6C6'
+				'yellow-lt': '#F7E6C6',
+				'entellect-gray': '#C4C4C4'
 			},
 			margin: {
 				'-wrap': '-5.62vw',
