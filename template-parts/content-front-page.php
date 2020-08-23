@@ -1,9 +1,11 @@
 <article <?php post_class('home'); ?> id="post-<?php the_ID(); ?>">
 
-    <header class="bg-blue -mx-wrap px-wrap min-h-screen-75 flex flex-col md:flex-row items-center py-24 md:pt-0 flex-wrap text-white gap-10">
+    <header class="bg-blue -mx-wrap px-wrap min-h-screen-75 flex flex-col md:flex-row items-center py-24 md:pt-0 flex-wrap text-white">
         <div class="flex-1">
-            <h2 class="text-5xl"><?php the_title(); ?></h2>
-            <p class="text-xl"><?php echo get_the_excerpt(); ?></p>
+            <h2 class="text-5xl mb-0"><?php the_title(); ?></h2>
+            <?php if ( has_excerpt() ) { ?>
+                <p class="text-2xl mt-4"><?php echo get_the_excerpt(); ?></p>
+            <?php } ?>
         </div>
         <?php if ( has_post_thumbnail() ) : ?>
         <div class="sm:w-3/4 md:w-1/2 py-10 flex justify-end">
@@ -47,7 +49,7 @@
     <div class="bg-gray-100 -mx-wrap px-wrap py-20">
         <h3 class="text-4xl text-center mb-10 font-bold">News &amp; Events</h3>
 
-        <div class="flex justify-center gap-10">
+        <div class="flex flex-wrap justify-center">
 
             <?php
 
@@ -61,12 +63,10 @@
             if ( $the_query->have_posts() ) :
 
             ?>
-
-                <div class="flex-1">
                 
                     <?php while ( $the_query->have_posts() ) : $the_query->the_post() ?>
 
-                        <a href="<?php the_permalink() ?>" class="bg-gray-300 text-black mx-auto block max-w-sm px-4 pb-4 hover:bg-gray-400 focus:bg-gray-400 duration-300">
+                        <a href="<?php the_permalink() ?>" class="bg-gray-300 m-5 text-black block max-w-sm px-4 pb-4 hover:bg-gray-400 focus:bg-gray-400 duration-300 w-full">
 
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <div class="bg-cover bg-center -mx-4" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');height: 250px;"></div>
@@ -79,13 +79,14 @@
 
                     <?php endwhile; ?>
 
-                    <a href="<?php echo get_post_type_archive_link( 'event' ); ?>" class="text-base flex items-center justify-center inline-block mt-4 mx-auto font-bold">View More Events<i data-feather="arrow-right" class="ml-1" width="20" height="20"></i></a>
-
-            </div>
-
             <?php endif; wp_reset_query(); ?>
 
         </div>
+
+        <div class="flex items-center justify-center">
+            <a href="<?php echo get_post_type_archive_link( 'event' ); ?>" class="text-base flex items-center justify-center mt-4 mx-auto font-bold hover:underline focus:underline">View More Events<i data-feather="arrow-right" class="ml-1" width="20" height="20"></i></a>
+        </div>
+
     </div>
 
 </article>
