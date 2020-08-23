@@ -25,21 +25,19 @@
 			</nav>
 			<?php } ?>
 
-			<footer role="contentinfo" class="px-wrap bg-blue text-white px-10 pt-10">
+			<footer role="contentinfo" class="px-wrap bg-blue text-white pt-10">
 
-				<div class="flex flex-wrap justify-between items-center">
+				<div class="flex flex-col md:flex-row flex-wrap justify-between items-center">
 
-					<img src="" />
+					<!-- <img src="" /> -->
 
 					<div>
 						<address class="mb-2">
-							Line 1
-							<br/>
-							Line 2
+							Reston, VA 20191
 						</address>
-						<a href="tel:" class=>phone</a>
+						<a href="tel:+17034891947" class="no-underline hover:underline focus:underline">(703) 489-1947</a>
 						<br/>
-						<a href="mailto:">email</a>
+						<a href="mailto:info@entellectllc.com" class="no-underline hover:underline focus:underline">info@entellectllc.com</a>
 					</div>
 
 					<nav role="navigation" aria-label="main navigation">
@@ -47,7 +45,11 @@
 						if ( has_nav_menu( 'primary' ) ) {
 							wp_nav_menu( array(
 								'theme_location'	=> 'primary',
-								'menu_class'		=> 'flex flex-wrap justify-center items-center',
+								'menu_class'		=> 'flex flex-col md:flex-row mt-4 md:mt-0 flex-wrap p-0 justify-center items-center',
+								'before'			=>'<span class="md:ml-4">',
+								'after'				=>'</span>',
+								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
+								'link_after'		=> '</span>',
 								'fallback_cb'    	=> false,
 							) );
 						}
@@ -59,7 +61,11 @@
 						if ( has_nav_menu( 'social' ) ) {
 							wp_nav_menu( array(
 								'theme_location'	=> 'social',
-								'menu_class'		=> 'flex flex-wrap justify-center items-center',
+								'menu_class'		=> 'flex flex-col md:flex-row mt-4 md:mt-0 flex-wrap p-0 justify-center items-center',
+								'before'			=>'<span class="mx-2 md:ml-4 md:mr-0">',
+								'after'				=>'</span>',
+								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
+								'link_after'		=> '</span>',
 								'fallback_cb'    	=> false,
 							) );
 						}
