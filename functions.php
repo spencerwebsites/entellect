@@ -43,7 +43,7 @@ function sccwps_enqueue_style() {
 
 function sccwps_enqueue_script(){
 
-    // wp_enqueue_script('jquery-min', get_template_directory_uri() . '/assets/vendors/jquery/jquery.1.11.3.min.js', array(), null, true);
+    wp_enqueue_script('jquery-min', 'https://code.jquery.com/jquery-1.11.3.min.js', array(), null, true);
     
     // wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/dist/js/enviro-js.dist.js', '', '1.0.0', true);
 
@@ -55,7 +55,7 @@ function sccwps_enqueue_script(){
     // );
 
     // wp_localize_script('main-js', 'php_array', $php_array);
-
+    wp_enqueue_script('main-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), null, true);
     wp_enqueue_script('feather-icons', 'https://unpkg.com/feather-icons', array(), null, true);
 
 }
@@ -83,3 +83,17 @@ function sccwps_menus() {
 }
 
 add_action( 'init', 'sccwps_menus' );
+
+function entellect_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Footer',
+		'id'            => 'footer_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="sr-only">',
+		'after_title'   => '</h4>',
+	) );
+
+}
+add_action( 'widgets_init', 'entellect_widgets_init' );

@@ -35,15 +35,11 @@ if ( is_search() ) {
 if ( $archive_title || $archive_subtitle ) {
 	?>
 
-	<header>
-
-		<?php if ( $archive_title ) { ?>
-			<h1><?php echo wp_kses_post( $archive_title ); ?></h1>
-		<?php } ?>
-
-		<?php if ( $archive_subtitle ) { ?>
-			<div><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
-		<?php } ?>
+	<header class="-mx-wrap px-wrap py-20 bg-blue flex items-center justify-center min-h-screen-50 bg-center bg-cover relative">
+	
+	<?php if ( $archive_title ) { ?>
+		<h1 class="uppercase text-white text-4xl text-center relative z-10 md:text-5xl"><?php echo wp_kses_post( $archive_title ); ?></h1>
+	<?php } ?>
 
 	</header>
 

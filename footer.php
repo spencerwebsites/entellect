@@ -15,7 +15,7 @@
 				wp_nav_menu( array(
 					'theme_location'	=> 'cta',
 					'container' 		=> false,
-					'menu_class'		=> 'flex flex-wrap justify-center items-center',
+					'menu_class'		=> 'flex flex-wrap justify-center items-center p-0',
 					'link_before'		=> '<span class="block px-6 py-3 bg-white text-purple uppercase text-lg font-medium border-2 border-white border-solid duration-300 hover:bg-purple hover:text-white focus:bg-purple focus:text-white">',
 					'link_after'		=> '</span>',
 					'fallback_cb'    	=> false,
@@ -29,15 +29,16 @@
 
 				<div class="flex flex-col md:flex-row flex-wrap justify-between items-center">
 
-					<!-- <img src="" /> -->
+					<div class="flex md:flex-row flex-col items-center">
 
-					<div>
-						<address class="mb-2">
-							Reston, VA 20191
-						</address>
-						<a href="tel:+17034891947" class="no-underline hover:underline focus:underline">(703) 489-1947</a>
-						<br/>
-						<a href="mailto:info@entellectllc.com" class="no-underline hover:underline focus:underline">info@entellectllc.com</a>
+						<a href="<?php home_url(); ?>" class="md:mr-4"><img src="<?php site_icon_url(100); ?>" alt="<?php echo bloginfo('title'); ?>" /></a>
+
+						<?php
+						if ( is_active_sidebar( 'footer_1' ) ) {
+							dynamic_sidebar( 'footer_1' );
+						}
+						?>
+					
 					</div>
 
 					<nav role="navigation" aria-label="main navigation">
@@ -55,7 +56,7 @@
 						}
 						?>
 					</nav>
-					
+
 					<nav role="navigation" aria-label="social media">
 						<?php
 						if ( has_nav_menu( 'social' ) ) {
@@ -92,7 +93,7 @@
 
 		<?php wp_footer(); ?>
 		<script>
-			feather.replace({'width':35, 'height': 35})
+			feather.replace({'width':35, 'height': 35});
 		</script>
 
 	</body>
