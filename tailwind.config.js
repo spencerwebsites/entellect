@@ -50,14 +50,15 @@ module.exports = {
 				'blue-lt': '#D2DFF2',
 				'green-lt': '#D2E4A3',
 				'yellow-lt': '#F7E6C6',
-				'entellect-gray': '#C4C4C4'
+				'entellect-gray': '#C4C4C4',
+				'gray-lt': '#F0F0F0'
 			},
 			margin: {
 				'-wrap': '-5.62vw',
-				'wrap': '5.62vw'
+				wrap: '5.62vw'
 			},
 			padding: {
-				'wrap': '5.62vw'
+				wrap: '5.62vw'
 			}
 		}
 	},
