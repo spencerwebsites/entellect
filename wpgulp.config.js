@@ -8,7 +8,6 @@
  */
 
 module.exports = {
-
 	// Project options.
 	projectURL: 'wpgulp.local', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
@@ -31,10 +30,6 @@ module.exports = {
 	jsCustomSRC: './assets/js/custom/*.js', // Path to JS custom scripts folder.
 	jsCustomDestination: './assets/js/', // Path to place the compiled JS custom scripts file.
 	jsCustomFile: 'custom', // Compiled JS custom file name. Default set to custom i.e. custom.js.
-
-	// Images options.
-	imgSRC: './assets/img/raw/**/*', // Source folder of images which should be optimized and watched. You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-	imgDST: './assets/img/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 	// Watch files paths.
 	watchStyles: './assets/sass/**/*.scss', // Path to all *.scss files inside css folder and inside them.
