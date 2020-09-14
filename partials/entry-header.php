@@ -3,7 +3,7 @@
     <?php
         $classes = '';
 
-        get_field('color') ? $classes .= 'bg-' . the_field( 'color' ) : $classes .= 'bg-blue';
+        get_field('color') ? $classes .= 'bg-' . get_field( 'color' ) : $classes .= 'bg-blue';
     ?>
 
     <header class="-mx-wrap px-wrap py-20 min-h-screen-50 <?php echo $classes; ?> flex items-center justify-center relative">
