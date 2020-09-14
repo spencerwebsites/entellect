@@ -14,7 +14,7 @@
 
 	</head>
 
-	<body <?php body_class('w-full overflow-x-hidden h-full flex flex-col font-body'); ?>>
+	<body <?php body_class('w-full overflow-x-hidden h-full flex flex-col font-body md:overflow-y-auto'); ?>>
 
 		<?php wp_body_open(); ?>
 
@@ -71,7 +71,7 @@
 								'theme_location'	=> 'primary',
 								'container' 		=> false,
 								'items_wrap' 		=> '%3$s',
-								'before'			=>'<span class="text-2xl block mb-4 md:mb-0 md:text-sm md:ml-4">',
+								'before'			=>'<span class="text-2xl text-center block mb-4 md:my-1 md:text-sm md:ml-4">',
 								'after'				=>'</span>',
 								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
 								'link_after'		=> '</span>',

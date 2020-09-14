@@ -3,7 +3,7 @@
     <?php
         $classes = '';
 
-        get_field('color') ? $classes .= 'bg-' . get_field( 'color' ) : $classes .= 'bg-blue';
+        get_field('color') ? $classes .= 'bg-' . the_field( 'color' ) : $classes .= 'bg-blue';
     ?>
 
     <header class="-mx-wrap px-wrap py-20 min-h-screen-50 <?php echo $classes; ?> flex items-center justify-center relative">
@@ -17,7 +17,7 @@
         <?php } ?>
 
         <div class="text-center text-white">
-            <?php the_title('<h1 class="uppercase text-white text-4xl text-center relative z-10 mb-0 md:text-5xl">', '</h1>'); ?>
+            <?php the_title('<h1 class="uppercase text-white text-center relative z-10 mb-0">', '</h1>'); ?>
 
             <?php if ( has_excerpt() ) echo '<p class="text-2xl mt-4">' . get_the_excerpt() . '</p>'?>
         </div>

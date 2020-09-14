@@ -2,9 +2,9 @@
 
     <header class="bg-blue -mx-wrap px-wrap min-h-screen-75 flex flex-col md:flex-row items-center py-24 md:pt-0 flex-wrap text-white">
         <div class="flex-1">
-            <h2 class="text-5xl mb-0"><?php the_title(); ?></h2>
+            <h2 class="text-3xl md:text-5xl mb-0"><?php the_title(); ?></h2>
             <?php if ( has_excerpt() ) { ?>
-                <p class="text-2xl mt-4"><?php echo get_the_excerpt(); ?></p>
+                <p class="text-lg md:text-2xl mt-4"><?php echo get_the_excerpt(); ?></p>
             <?php } ?>
         </div>
         <?php if ( has_post_thumbnail() ) : ?>
@@ -47,7 +47,7 @@
     <?php endif; ?>
 
     <div class="bg-gray-100 -mx-wrap px-0 py-20">
-        <h3 class="text-4xl text-center mb-10 px-wrap font-bold">News &amp; Events</h3>
+        <h2 class="text-center mb-10 px-wrap font-bold">News &amp; Events</h2>
 
         <div class="flex flex-wrap justify-center">
 

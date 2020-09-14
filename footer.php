@@ -27,11 +27,11 @@
 
 			<footer role="contentinfo" class="px-wrap bg-blue text-white pt-10">
 
-				<div class="flex flex-col md:flex-row flex-wrap justify-between items-center">
+				<div class="flex flex-col md:flex-row flex-wrap justify-between text-center md:text-left">
 
-					<div class="flex md:flex-row flex-col items-center">
+					<div class="flex md:flex-row flex-col">
 
-						<a href="<?php home_url(); ?>" class="md:mr-4"><img src="<?php site_icon_url(100); ?>" alt="<?php echo bloginfo('title'); ?>" /></a>
+						<a href="<?php home_url(); ?>" class="md:mr-4"><img src="<?php site_icon_url(100); ?>" alt="<?php echo bloginfo('title'); ?>" class="mx-auto mb-4 md:mx-0 md:mb-0" /></a>
 
 						<?php
 						if ( is_active_sidebar( 'footer_1' ) ) {
@@ -41,12 +41,12 @@
 					
 					</div>
 
-					<nav role="navigation" aria-label="main navigation">
+					<nav role="navigation" aria-label="main navigation" class="self-start w-full md:w-auto">
 						<?php
 						if ( has_nav_menu( 'primary' ) ) {
 							wp_nav_menu( array(
 								'theme_location'	=> 'primary',
-								'menu_class'		=> 'flex flex-col md:flex-row mt-4 md:mt-0 flex-wrap p-0 justify-center items-center',
+								'menu_class'		=> 'mt-4 md:mt-0 p-0',
 								'before'			=>'<span class="md:ml-4">',
 								'after'				=>'</span>',
 								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
@@ -57,12 +57,28 @@
 						?>
 					</nav>
 
-					<nav role="navigation" aria-label="social media">
+					<nav role="navigation" aria-label="secondary navigation" class="self-start w-full md:w-auto">
+						<?php
+						if ( has_nav_menu( 'footer-secondary' ) ) {
+							wp_nav_menu( array(
+								'theme_location'	=> 'footer-secondary',
+								'menu_class'		=> 'p-0',
+								'before'			=>'<span class="md:ml-4">',
+								'after'				=>'</span>',
+								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
+								'link_after'		=> '</span>',
+								'fallback_cb'    	=> false,
+							) );
+						}
+						?>
+					</nav>
+
+					<nav role="navigation" aria-label="social media" class="w-full md:w-auto">
 						<?php
 						if ( has_nav_menu( 'social' ) ) {
 							wp_nav_menu( array(
 								'theme_location'	=> 'social',
-								'menu_class'		=> 'flex flex-col md:flex-row mt-4 md:mt-0 flex-wrap p-0 justify-center items-center',
+								'menu_class'		=> 'flex flex-row mt-4 md:mt-0 flex-wrap p-0 justify-center items-center',
 								'before'			=>'<span class="mx-2 md:ml-4 md:mr-0">',
 								'after'				=>'</span>',
 								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
@@ -83,7 +99,7 @@
 					);
 					?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="underline hover:no-underline focus:no-underline"><?php bloginfo( 'name' ); ?></a>.
-					<?php _e( 'All rights reserved. | Developed by' ); ?>
+					<?php _e( 'All rights reserved. | Designed by' ); ?>
 					<a href="<?php echo esc_url( __( 'https://spencercreative.co/' ) ); ?>" class="underline hover:no-underline focus:no-underline">
 						<?php _e( 'Spencer Creative Co.' ); ?>
 					</a>
