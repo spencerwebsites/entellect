@@ -27,7 +27,7 @@ add_theme_support( 'editor-color-palette', array(
     array(
         'name' => __( 'Entellect Gray', 'entellect' ),
         'slug' => 'entellect-gray',
-        'color' => '#C4C4C4',
+        'color' => '#F0F0F0',
     ),
 ) );
 add_theme_support( 'disable-custom-colors' );
@@ -74,7 +74,7 @@ function sccwps_menus() {
 
 	$locations = array(
 		'primary'  => __( 'Main Menu', 'sccwps' ),
-		'footer'   => __( 'Footer Menu', 'sccwps' ),
+		'footer-secondary'   => __( 'Footer Menu', 'sccwps' ),
 		'social'   => __( 'Social Menu', 'sccwps' ),
 		'cta'   => __( 'CTA Menu', 'sccwps' ),
 	);

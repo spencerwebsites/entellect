@@ -57,6 +57,10 @@ module.exports = {
 				'-wrap': '-5.62vw',
 				wrap: '5.62vw'
 			},
+			maxWidth: {
+				screen: '100vw',
+				container: '1000px'
+			},
 			padding: {
 				wrap: '5.62vw'
 			}
