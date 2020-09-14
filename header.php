@@ -31,7 +31,7 @@
 
 			if ( is_home() || is_front_page() ) {
 
-				echo '<h1>';
+				echo '<h1 class="mt-0">';
 
 					if ( has_custom_logo() ) {
 						echo '<img src="' . $image[0] . '" alt="' . get_bloginfo('name') . '" style="max-width: 150px" />';
