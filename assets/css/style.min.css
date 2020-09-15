@@ -70,7 +70,7 @@ ul,ol{list-style:initial;margin:initial;padding:revert}
 nav ul,nav ol{list-style:none;padding:0}
 nav li{position:relative}
 body:not(.home) main>article:last-child>*:last-child>*:last-child{padding-bottom:8rem}
-#header .sub-menu{padding:0;margin-bottom:1rem;min-width:100%;right:0;--bg-opacity:1;background-color:#182b3e;background-color:rgba(24,43,62,var(--bg-opacity));line-height:1.25;-webkit-box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);text-transform:none;text-align:center;top:100%}
+#header .sub-menu{padding:0;margin-bottom:1rem;min-width:100%;--bg-opacity:1;background-color:#182b3e;background-color:rgba(24,43,62,var(--bg-opacity));line-height:1.25;-webkit-box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);text-transform:none;text-align:center;min-width:200px;top:100%}
 #header .sub-menu li{margin-bottom:1rem}
 #header .sub-menu li:last-child{margin-bottom:0}
 #header .sub-menu li>span{margin:0}
@@ -6279,7 +6279,7 @@ h3{font-size:1.5rem;margin-bottom:1.5rem}
 h4{font-size:1.25rem;margin-bottom:1.5rem}
 h5{font-size:1.125rem;margin-bottom:1.5rem}
 h6{font-size:1rem;margin-bottom:1.5rem}
-#header .sub-menu{padding:1rem;position:absolute;margin-right:-1rem;text-align:right}
+#header .sub-menu{padding:1rem;position:absolute;text-align:right;z-index:50;left:50%;-webkit-transform:translate(-50%,0);transform:translate(-50%,0)}
 .alignleft,.alignright{float:none;margin-left:auto;margin-right:auto}
 .container{max-width:768px}
 .md\:container{width:100%}
