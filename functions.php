@@ -27,7 +27,7 @@ add_theme_support( 'editor-color-palette', array(
     array(
         'name' => __( 'Entellect Gray', 'entellect' ),
         'slug' => 'entellect-gray',
-        'color' => '#C4C4C4',
+        'color' => '#F0F0F0',
     ),
 ) );
 add_theme_support( 'disable-custom-colors' );
@@ -37,13 +37,14 @@ require_once('lib/functions.php');
 function sccwps_enqueue_style() {      
     //wp_enqueue_style('theme-styles', get_template_directory_uri() . '/assets/css/enviro-styles.css', array(), null, false); 
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&family=Open+Sans&display=swap');           
-    wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');           
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/vendors/fontawesome/css/all.min.css');
 
 }
 
 function sccwps_enqueue_script(){
 
-    // wp_enqueue_script('jquery-min', get_template_directory_uri() . '/assets/vendors/jquery/jquery.1.11.3.min.js', array(), null, true);
+    wp_enqueue_script('jquery-min', 'https://code.jquery.com/jquery-1.11.3.min.js', array(), null, true);
     
     // wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/dist/js/enviro-js.dist.js', '', '1.0.0', true);
 
@@ -55,7 +56,7 @@ function sccwps_enqueue_script(){
     // );
 
     // wp_localize_script('main-js', 'php_array', $php_array);
-
+    wp_enqueue_script('main-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), null, true);
     wp_enqueue_script('feather-icons', 'https://unpkg.com/feather-icons', array(), null, true);
 
 }
@@ -74,7 +75,7 @@ function sccwps_menus() {
 
 	$locations = array(
 		'primary'  => __( 'Main Menu', 'sccwps' ),
-		'footer'   => __( 'Footer Menu', 'sccwps' ),
+		'footer-secondary'   => __( 'Footer Menu', 'sccwps' ),
 		'social'   => __( 'Social Menu', 'sccwps' ),
 		'cta'   => __( 'CTA Menu', 'sccwps' ),
 	);
@@ -83,3 +84,17 @@ function sccwps_menus() {
 }
 
 add_action( 'init', 'sccwps_menus' );
+
+function entellect_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Footer',
+		'id'            => 'footer_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="sr-only">',
+		'after_title'   => '</h4>',
+	) );
+
+}
+add_action( 'widgets_init', 'entellect_widgets_init' );
