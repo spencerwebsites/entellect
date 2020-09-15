@@ -18,7 +18,7 @@
 
 		<?php wp_body_open(); ?>
 
-		<header id="header" role="banner" class="w-full flex justify-between items-center bg-blue px-wrap py-4 text-white">
+		<header id="header" role="banner" class="w-full flex justify-between items-center bg-blue px-wrap py-4 text-white z-50">
 
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 
@@ -71,7 +71,7 @@
 								'theme_location'	=> 'primary',
 								'container' 		=> false,
 								'items_wrap' 		=> '%3$s',
-								'before'			=>'<span class="text-2xl text-center block mb-4 md:my-1 md:text-sm md:ml-4">',
+								'before'			=>'<span class="text-2xl text-center block mb-4 md:my-1 md:text-sm md:mx-2">',
 								'after'				=>'</span>',
 								'link_before'		=> '<span class="text-white hover:underline focus:underline">',
 								'link_after'		=> '</span>',
