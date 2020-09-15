@@ -3,7 +3,30 @@
     <?php get_template_part( 'partials/entry-header' ); ?>
 
     <div class="entry-content pt-20 news-events">
-		<?php the_content( __( 'Continue reading' ) ); ?>
+		<div class="flex flex-wrap justify-center mb-20">
+		<?php
+
+		$args = array( 
+			'post_type' => 'post',
+			'limit'     => 4,
+		);
+
+		$the_query = new WP_Query( $args );
+
+		if ( $the_query->have_posts() ) :
+
+			while ( $the_query->have_posts() ) : $the_query->the_post();
+			
+				get_template_part('partials/post', 'block');
+
+			endwhile;
+
+		endif;
+
+		wp_reset_query();
+
+		?>
+		</div>
 		<section class="bg-gray-lt -mx-wrap px-wrap w-screen max-w-screen pt-10">
 			<?php
 				$args = array(  
