@@ -1,16 +1,12 @@
 <?php get_header(); ?>
 
-	<h1><?php _e( 'Page Not Found' ); ?></h1>
+	<?php get_template_part( 'partials/entry-header' ); ?>
 
-	<p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.' ); ?></p>
+	<div class="entry-content pt-20 pb-24">
 
-	<?php
-	get_search_form(
-		array(
-			'label' => __( '404 not found' ),
-		)
-	);
-	?>
+		<p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.' ); ?></p>
+
+    </div>
 
 <?php
 get_footer();
