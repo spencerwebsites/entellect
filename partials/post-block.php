@@ -5,6 +5,6 @@
 	<?php endif; ?>
 	
 	<?php the_title('<h4 class="font-bold pt-4 font-body text-xl my-0">', '</h4>'); ?>
-	<span class="block text-sm font-bold mb-0"><?php the_field( 'event_date' ); ?></span>
+	<span class="block text-sm font-bold mb-0"><?php the_date(); ?></span>
 	<?php has_excerpt() && the_excerpt('<p class="mt-4">', '</p>'); ?>
 </a>
