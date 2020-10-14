@@ -6,7 +6,7 @@
 		<div class="flex flex-wrap justify-center mb-20">
 		<?php
 
-		$args = array( 
+		$args = array(
 			'post_type' => 'post',
 			'limit'     => 4,
 		);
@@ -16,7 +16,7 @@
 		if ( $the_query->have_posts() ) :
 
 			while ( $the_query->have_posts() ) : $the_query->the_post();
-			
+
 				get_template_part('partials/post', 'block');
 
 			endwhile;
@@ -27,9 +27,14 @@
 
 		?>
 		</div>
+
+		<div className="mb-20">
+			<?php the_content(); ?>
+		</div>
+
 		<section class="bg-gray-lt -mx-wrap px-wrap w-screen max-w-screen pt-10">
 			<?php
-				$args = array(  
+				$args = array(
 					'post_type' => 'event',
 					'post_status' => 'publish',
 					'posts_per_page' => 5,
@@ -37,9 +42,9 @@
 					'orderby'			=> 'meta_value',
 					'order'				=> 'DESC'
 				);
-			
-				$loop = new WP_Query( $args ); 
-					
+
+				$loop = new WP_Query( $args );
+
 				while ( $loop->have_posts() ) : $loop->the_post();
 
 					$end_date_passed_check = DateTime::createFromFormat( 'F j, Y', get_field( 'event_date' ) );
