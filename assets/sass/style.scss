@@ -75,8 +75,11 @@ nav {
 	}
 }
 
-body:not(.home) main > article:last-child > *:last-child > *:last-child {
-	@apply pb-32;
+body:not(.home) main > article:last-child > *:last-child {
+	> *:last-child,
+	> .nf-form-cont:nth-last-child(2) {
+		@apply pb-32;
+	}
 }
 
 #header {
