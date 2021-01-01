@@ -337,6 +337,10 @@ body:not(.home) main > article:last-child > *:last-child {
 	}
 }
 
+.wp-block-embed-twitter .wp-block-embed__wrapper {
+	text-align: center;
+}
+
 footer a {
 	@apply text-white;
 }

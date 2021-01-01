@@ -115,6 +115,7 @@ body:not(.home) main>article:last-child>*:last-child>*:last-child,body:not(.home
 #menu-social-media a[href*='facebook.com']>span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
 #menu-social-media a[href*='linkedin.com']::before{content:'\f0e1'}
 #menu-social-media a[href*='linkedin.com']>span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+.wp-block-embed-twitter .wp-block-embed__wrapper{text-align:center}
 footer a{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}
 .container{width:100%}
 .space-y-0>:not(template) ~ :not(template){--space-y-reverse:0;margin-top:calc(0px * calc(1 - var(--space-y-reverse)));margin-bottom:calc(0px * var(--space-y-reverse))}
