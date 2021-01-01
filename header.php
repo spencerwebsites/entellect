@@ -14,7 +14,7 @@
 
 	</head>
 
-	<body <?php body_class('w-full overflow-x-hidden h-full flex flex-col font-body md:overflow-y-auto'); ?>>
+	<body <?php body_class('w-full overflow-x-hidden min-h-full flex flex-col font-body md:overflow-y-auto'); ?>>
 
 		<?php wp_body_open(); ?>
 
@@ -64,7 +64,7 @@
 				<nav id="main-nav" role="navigation" aria-label="main navigation" class="uppercase hidden md:block fixed md:static top-0 left-0 h-full w-full bg-blue py-20 px-wrap md:p-0 z-20">
 
 					<ul class="flex flex-wrap flex-col md:flex-row items-center font-medium justify-end text-sm p-0">
-				
+
 						<?php
 						if ( has_nav_menu( 'primary' ) ) {
 							wp_nav_menu( array(
@@ -96,11 +96,11 @@
 						?>
 
 					</ul>
-				
+
 				</nav>
 
 			<?php } ?>
 
 		</header>
-		
+
 		<main role="main" class="w-full flex-1 px-wrap">
